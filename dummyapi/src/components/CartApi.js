@@ -18,7 +18,20 @@ function CartApi(){
 
     return(
         <>
-        
+        <h3>Cart Ids</h3>
+        <ul>
+           {
+            cartIds.map((id)=>{
+                return(
+                    <li key={id}>
+                        cartIds:{id}
+                    </li>
+                )
+            })
+           }
+
+
+        </ul>
         </>
     );
 }
