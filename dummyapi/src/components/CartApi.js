@@ -48,7 +48,18 @@ function CartApi(){
            }
 
         </ul>
-        
+        {
+            <table border='2'>
+                <tr>
+                    <th>Peoduct Id</th>
+                    <th>title</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Image</th>
+                </tr>
+
+            </table>
+        }
         </>
     );
 }
