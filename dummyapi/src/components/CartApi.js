@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function CartApi(){
 
     let[cartIds,setCartIds]=useState([]);
+    let[selectedCartIds,setSelectedCartIds]=useState(null);
 
     async function getAllCarts(){
         let response=await fetch('https://dummyjson.com/carts');
@@ -23,9 +25,10 @@ function CartApi(){
            {
             cartIds.map((id)=>{
                 return(
-                    <li key={id}>
+                   <Link to="#" onClick={()=>setSelectedCartIds(id)}> <li key={id}>
                         cartIds:{id}
                     </li>
+                    </Link>
                 )
             })
            }
