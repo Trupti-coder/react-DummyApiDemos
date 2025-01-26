@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 function CartApi(){
 
     let[cartIds,setCartIds]=useState([]);
+    let[cartDetails,setCartDetails]=useState(null);
     let[selectedCartIds,setSelectedCartIds]=useState(null);
 
     async function getAllCarts(){
@@ -14,8 +15,21 @@ function CartApi(){
 
     }
 
+    async function getAllCartDetails(id){
+        let response=await fetch(`https://dummyjson.com/carts/${id}`);
+        let result=await response.json();
+        setCartDetails(result);
+
+    }
+
     useEffect(()=>{
         getAllCarts();
+    },[]);
+
+    useEffect(()=>{
+        if(selectedCartIds!==null){
+        getAllCartDetails();
+        }
     },[]);
 
     return(
@@ -33,8 +47,8 @@ function CartApi(){
             })
            }
 
-
         </ul>
+        
         </>
     );
 }
