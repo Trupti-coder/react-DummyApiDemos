@@ -1,0 +1,13 @@
+.cartIdList {
+    list-style-type: none;
+}
+
+.cartId {
+    margin: 5px 0;
+}
+
+.cartId a {
+    text-decoration: none;
+    color: #070809;
+    cursor: pointer;
+}
