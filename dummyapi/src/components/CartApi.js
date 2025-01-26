@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";  // Import Link component
-//import styles from './Cart.module.css';
+import styles from './Cart.module.css';
 
 function Cart() {
     const [cartIds, setCartIds] = useState([]);
