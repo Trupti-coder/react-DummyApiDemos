@@ -58,14 +58,14 @@ function CartApi(){
                     <th>Image</th>
                 </tr>
                 {
-                    cartDetails.products.map((products)=>{
+                    cartDetails.products.map((product)=>{
                         return(
-                            <tr key={products.id}>
-                                <td>{products.id}</td>
-                                <td>{products.title}</td>
-                                <td>{products.price}</td>
-                                <td>{products.quantity}</td>
-                                <td><img src="">{products.thumbnail}</img></td>
+                            <tr key={product.id}>
+                                <td>{product.id}</td>
+                                <td>{product.title}</td>
+                                <td>{product.price}</td>
+                                <td>{product.quantity}</td>
+                                <td><img src="">{product.thumbnail}</img></td>
 
                             </tr>
                         )
