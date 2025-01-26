@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 function CartApi(){
 
     let[cartIds,setCartIds]=useState([]);
-    let[cartDetails,setCartDetails]=useState(null);
-    let[selectedCartIds,setSelectedCartIds]=useState(null);
+    let[cartDetails,setCartDetails]=useState([]);
+    let[selectedCartIds,setSelectedCartIds]=useState();
 
     async function getAllCarts(){
         let response=await fetch('https://dummyjson.com/carts');
@@ -30,7 +30,7 @@ function CartApi(){
         if(selectedCartIds!==null){
         getAllCartDetails();
         }
-    },[]);
+    },[selectedCartIds]);
 
     return(
         <>
@@ -57,6 +57,20 @@ function CartApi(){
                     <th>Quantity</th>
                     <th>Image</th>
                 </tr>
+                {
+                    cartDetails.products.map((products)=>{
+                        return(
+                            <tr key={products.id}>
+                                <td>{products.id}</td>
+                                <td>{products.title}</td>
+                                <td>{products.price}</td>
+                                <td>{products.quantity}</td>
+                                <td><img src="">{products.thumbnail}</img></td>
+
+                            </tr>
+                        )
+                    })
+                }
 
             </table>
         }
