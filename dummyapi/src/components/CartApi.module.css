@@ -11,3 +11,29 @@
     color: #070809;
     cursor: pointer;
 }
+
+
+.cartDetails {
+    margin-top: 20px;
+}
+
+.cartTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cartTable th, .cartTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.cartTable th {
+    background-color: #f2f2f2;
+    color: black;
+}
+
+
+.img{
+    width: 100px;
+    height: 100px;
+}
