@@ -39,7 +39,7 @@ function Product(){
     function convertPrice(products,rate){
         return products.map(product=>({
             ...Product,
-            price:(Product.price*rate).toFixed()
+            price:(Product.price*rate).toFixed(2)
         }))
 
     }
@@ -63,7 +63,7 @@ function Product(){
                 
             </tr>
             {
-                data.map((x)=>{
+                convertedData.map((x)=>{
                     return(
                         <tr key={x.id }>
                             <td>{x.id}</td>
