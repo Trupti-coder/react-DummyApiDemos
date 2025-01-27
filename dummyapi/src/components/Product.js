@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Product(){
     let[data,setData]=useState([]);
@@ -12,9 +13,13 @@ function Product(){
         getAllProduct();
     },[]);
 
+    function funAddCart(){
+
+    }
+
     return(
         <>
-        <table>
+        <table border='2'>
             <tr>
                 <th>Product Id</th>
                 <th>Title</th>
@@ -33,6 +38,7 @@ function Product(){
                             <td>{x.price}</td>
                             <td>{x.rating}</td>
                             <td><img src={x.thumbnail} alt=''></img></td>
+                            <td><Link to="#" onClick={funAddCart}>AddToCart</Link></td>
 
                         </tr>
                     )
