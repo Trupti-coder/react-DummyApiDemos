@@ -38,7 +38,7 @@ function Cart() {
 
     return (
         <>
-            <h3>Cart IDs</h3>
+            <h3>Cart Ids</h3>
             <ul className={styles.cartIdList}>
                 {cartIds.length ? (
                     cartIds.map((id) => (
