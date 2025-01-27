@@ -26,11 +26,22 @@ function Product(){
 
     function funAddCart(){
 
+
+    }
+
+    function funSelect(event){
+        const selectedCurrency=event.target.value;
+        setCurrency(selectedCurrency);
+        setConvertedData(data,currencyRates[selectedCurrency]);
+    }
+
+    function convertPrice(){
+
     }
 
     return(
         <>
-        Select currency:<select>
+        Select currency:<select onChange={funSelect}>
           <option value="INR">INR</option>
           <option value="USD">USD</option>
           <option value="CAD">CAD</option>
