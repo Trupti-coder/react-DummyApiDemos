@@ -6,6 +6,13 @@ function Product(){
     let[currency,setCurrency]=useState('INR');
     let[convertedData,setConvertedData]=useState([]);
     
+    const currencyRates = {
+
+        'INR': 1, 
+        'USD': 0.0116, // Approximation for 1 INR = 0.0116 USD (1 USD ≈ 86.1881 INR)
+        'CAD': 0.0167  // Approximation for 1 INR = 0.0167 CAD (1 CAD ≈ 60.0123 INR)
+    };
+
     
     async function getAllProduct(){
         let response=await fetch("https://dummyjson.com/products");
@@ -23,6 +30,12 @@ function Product(){
 
     return(
         <>
+        Select currency:<select>
+          <option value="INR">INR</option>
+          <option value="USD">USD</option>
+          <option value="CAD">CAD</option>
+        </select>
+
         <table border='2'>
             <tr>
                 <th>Product Id</th>
