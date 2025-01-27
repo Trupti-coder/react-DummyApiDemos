@@ -35,7 +35,11 @@ function Product(){
         setConvertedData(data,currencyRates[selectedCurrency]);
     }
 
-    function convertPrice(){
+    function convertPrice(products,rate){
+        return products.map(product=>({
+            ...Product,
+            price:(Product.price*rate).toFixed()
+        }))
 
     }
 
