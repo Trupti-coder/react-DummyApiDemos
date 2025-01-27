@@ -28,6 +28,7 @@ function Product(){
 
     function funAddCart(product){
         setCart([...cart,product]);
+       
 
 
     }
@@ -80,6 +81,7 @@ function Product(){
                 })
             }
         </table>
+
         </>
     );
 }
