@@ -33,13 +33,13 @@ function Product(){
     function funSelect(event){
         const selectedCurrency=event.target.value;
         setCurrency(selectedCurrency);
-        setConvertedData(data,currencyRates[selectedCurrency]);
+        setConvertedData(convertPrice(data,currencyRates[selectedCurrency]));
     }
 
     function convertPrice(products,rate){
         return products.map(product=>({
-            ...Product,
-            price:(Product.price*rate).toFixed(2)
+            ...product,
+            price:(product.price*rate).toFixed(2)
         }))
 
     }
@@ -65,7 +65,7 @@ function Product(){
             {
                 convertedData.map((x)=>{
                     return(
-                        <tr key={x.id }>
+                        <tr key={x.id}>
                             <td>{x.id}</td>
                             <td>{x.title}</td>
                             <td>{x.price}</td>
