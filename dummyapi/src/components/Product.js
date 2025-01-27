@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 
 function Product(){
     let[data,setData]=useState([]);
+    let[currency,setCurrency]=useState('INR');
+    let[convertedData,setConvertedData]=useState([]);
+    
+    
     async function getAllProduct(){
         let response=await fetch("https://dummyjson.com/products");
         let result=await response.json();
