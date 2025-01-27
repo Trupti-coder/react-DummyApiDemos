@@ -5,6 +5,7 @@ function Product(){
     let[data,setData]=useState([]);
     let[currency,setCurrency]=useState('INR');
     let[convertedData,setConvertedData]=useState([]);
+    let[cart,setCart]=useState([]);
     
     const currencyRates = {
 
@@ -25,7 +26,8 @@ function Product(){
         getAllProduct();
     },[]);
 
-    function funAddCart(){
+    function funAddCart(product){
+        setCart([...cart,product]);
 
 
     }
