@@ -11,9 +11,10 @@ function Product(){
     useEffect(()=>{
         getAllProduct();
     },[]);
-    
+
     return(
         <>
+       
         </>
     );
 }
