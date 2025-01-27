@@ -17,7 +17,8 @@ function Product(){
     async function getAllProduct(){
         let response=await fetch("https://dummyjson.com/products");
         let result=await response.json();
-        setData(result.products)
+        setData(result.products);
+        setConvertedData(convertPrice(result.products,currencyRates.INR));
     }
 
     useEffect(()=>{
@@ -45,7 +46,7 @@ function Product(){
 
     return(
         <>
-        Select currency:<select onChange={funSelect}>
+        Select currency:<select value={currency} onChange={funSelect}>
           <option value="INR">INR</option>
           <option value="USD">USD</option>
           <option value="CAD">CAD</option>
