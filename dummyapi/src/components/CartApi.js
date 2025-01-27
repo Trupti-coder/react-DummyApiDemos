@@ -58,7 +58,7 @@ function Cart() {
                             <tr>
                                 <th>Product Id</th>
                                 <th>Title</th>
-                                <th onClick={funSort} style={{ cursor: 'pointer' }}>Price</th>
+                                <th onClick={funSort}>Price</th>
                                 <th>Quantity</th>
                                 <th>Image</th>
                             </tr>
